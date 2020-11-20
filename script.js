@@ -68,3 +68,25 @@ function alertUserCountReiting(){
     }
     alert(message);
 }
+
+
+//4
+// function AskUserAboutFilms (numberOfFilms){
+    
+//     for(i = 0; i < numberOfFilms; i++ ){
+//         let bool = AskMovieCounter();
+//         if (bool == fasle) {
+//             i--;
+//          }
+//     }
+// }
+
+// function checknumberOfFilms() {
+//     let numberOfFilms;
+//     do{
+//         numberOfFilms = +prompt('Сколько фильмов Вы уже посмотрели?');
+//     }
+//     while (isNaN(numberOfFilms)|| numberOfFilms == 0 || numberOfFilms.length > 50){
+//     }
+//     personalMoieDB.count = numberOfFilms;
+// }
