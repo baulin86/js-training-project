@@ -59,7 +59,7 @@ function alertUserCountReiting(){
     let message;
     if (personalMoieDB.count < 10){
         message = "Просмотрено довольно мало фильмов";
-    }else if (personalMoieDB.count > 10 ||  personalMoieDB.count < 30) {
+    }else if (personalMoieDB.count >= 10 &&  personalMoieDB.count <= 30) {
         message = "Вы классический зритель";
     }else if(personalMoieDB.count > 30) {
         message = "Вы киноман";
