@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 const personalMoieDB = {
     count: "",
     movies: {},
@@ -8,10 +10,11 @@ const personalMoieDB = {
     privat:false,
 };
 
-checknumberOfFilms();
+start();
 AskUserAboutFilms(personalMoieDB.count);
-console.log(personalMoieDB);
-alertUserCountReiting();
+detectPersonalLevel();
+writeYourGenres();
+showMyDB();
 
 function AskUserAboutFilms (numberOfFilms){
     let i = 0;
@@ -24,7 +27,7 @@ function AskUserAboutFilms (numberOfFilms){
    };
 }
 
-function checknumberOfFilms() {
+function start() {
     let numberOfFilms;
 
     while (isNaN(numberOfFilms)|| numberOfFilms == 0 || numberOfFilms.length > 50){
@@ -55,7 +58,7 @@ function AddAnswerMovies(film, count){
     personalMoieDB.movies[film] = count;
 }
 
-function alertUserCountReiting(){
+function detectPersonalLevel(){
     let message;
     if (personalMoieDB.count < 10){
         message = "Просмотрено довольно мало фильмов";
@@ -66,9 +69,30 @@ function alertUserCountReiting(){
     } else{
         message = "Произошла ошибка";
     }
-    alert(message);
+    console.log(message);
 }
 
+function showMyDB() {
+    if (personalMoieDB.privat == false){
+        console.log(personalMoieDB);
+    }
+}
+
+function writeYourGenres(){
+
+    for(let i = 0; i < 3; i++) {
+        let genre = prompt(`Ваш любимый жанр под номером ${i+1}`,"" );
+        if (genre ==  null || genre == '' || +genre){
+            i = i-1 ;
+            console.log(i);
+            console.log(typeof(genre)) ;
+        }
+        else{
+            personalMoieDB.genres = genre;
+            console.log(genre +  ' ' + i );
+        }
+    };
+}
 
 //4
 // function AskUserAboutFilms (numberOfFilms){
