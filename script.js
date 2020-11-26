@@ -84,12 +84,9 @@ function writeYourGenres(){
         let genre = prompt(`Ваш любимый жанр под номером ${i+1}`,"" );
         if (genre ==  null || genre == '' || +genre){
             i = i-1 ;
-            console.log(i);
-            console.log(typeof(genre)) ;
         }
         else{
-            personalMoieDB.genres = genre;
-            console.log(genre +  ' ' + i );
+            personalMoieDB.genres[i] = genre;
         }
     };
 }
